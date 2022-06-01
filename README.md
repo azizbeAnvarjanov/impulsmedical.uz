@@ -1,0 +1,1 @@
+# impulsmedical.uz
