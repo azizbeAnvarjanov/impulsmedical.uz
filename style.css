@@ -1,0 +1,992 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dosis', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+html, body
+{
+    scroll-behavior: smooth;
+}
+
+
+:root {
+    --gb-color: #0da0c5;
+    --fff: #fff;
+    --blur-fff: rgba(255, 255, 255, 0.699);
+    --000: #000;
+    --border-color: rgba(165, 161, 161, 0.548);
+    --rgbaBG: rgba(0, 0, 0, 0.322);
+    --boxShadow: rgba(110, 107, 107, 0.575);
+    --avzal-cardBG: #949191;
+    --kulrang: #f3f4f5;
+    --link-color: rgb(99, 98, 98);
+}
+
+
+body.active
+{
+    --fff: rgb(29, 21, 21);
+    --000: #fff;
+    /* --gb-color: #fff; */
+}
+
+
+
+.btn {
+    color: var(--fff);
+    background: var(--gb-color);
+    padding: 9px 10px;
+    margin: 10px 0;
+    font-weight: 600;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.btn:hover {
+    opacity: .8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Navbar =================================== */
+
+
+.navbar {
+    background: var(--fff);
+    transition: .5s;
+    z-index: 999 !important;
+}
+
+.name-univer img {
+    filter: invert(1);
+    margin-right: 10px;
+    width: 40px;
+}
+
+.nav-top-info {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    transition: .5s;
+    height: 8vh;
+    color: var(--000);
+}
+
+
+.nav-top-info.active {
+    height: 0;
+    overflow: hidden;
+}
+
+.nav-top-info span {
+    display: flex;
+    align-items: center;
+    padding: 2px 30px;
+    width: 300px;
+    font-weight: 700;
+}
+
+.navbar.active {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background: var(--fff);
+    z-index: 1000;
+}
+
+.nav-top-info span i {
+    margin-right: 10px;
+    color: var(--gb-color);
+}
+
+.phone-univer {
+    border-right: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+}
+
+
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 5%;
+    position: relative;
+    transition: .5s;
+    z-index: 2;
+}
+
+.nav .menu {
+    width: 35px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    flex-direction: column;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.nav .menu span {
+    display: block;
+    background: var(--gb-color);
+    width: 100%;
+    height: 3px;
+    border-radius: 50px;
+    transition: .5s;
+}
+
+
+
+
+
+.menu.active span:nth-child(2) {
+    transform: scale(0);
+}
+
+
+.menu.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menu.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.navbar-brand a {
+    font-size: 1.2em;
+    color: var(--gb-color);
+}
+
+
+.navigation {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0vh;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    background: var(--blur-fff);
+    backdrop-filter: blur(20px);
+    z-index: 1;
+    padding: 20px 4%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    transition: .5s;
+}
+
+.navigation.active {
+    height: 80vh;
+    opacity: 1;
+    visibility: visible;
+}
+
+.navigation li a {
+    color: var(--gb-color);
+    font-weight: 700;
+    padding: 4px;
+    width: 100%;
+    display: inline-block;
+    border-bottom: 1px solid var(--gb-color);
+    margin: 10px 0 !important;
+    font-size: 1.1em;
+    transition: .5s;
+    transform: translateY(-500px);
+    opacity: 0;
+}
+
+
+.navigation li {
+    min-width: 100%;
+}
+
+.navigation.active li a {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Navbar =================================== */
+
+
+
+
+
+
+/* header ================================== */
+
+
+header {
+    width: 100%;
+    height: 120vh;
+    position: relative;
+    transition: .5s;
+}
+
+
+
+header svg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+
+header .img::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: var(--rgbaBG);
+}
+
+
+header .img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+}
+
+.img.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+.img h1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -280%);
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: .5s;
+    font-size: 4em;
+    color: var(--fff);
+}
+
+.img h4 {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -280%);
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: .5s;
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--fff);
+}
+
+.img.active h1,
+.img.active h4 {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+
+
+
+
+
+/* header ================================== */
+
+
+
+
+
+
+
+
+/* biz haqimizda ============================= */
+
+.biz-haqimizda {
+    height: 120vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px 3%;
+    background: url(./images/about-bg.jpg);
+    background-size: cover;
+    position: relative;
+    z-index: 2;
+}
+
+.biz-haqimizda p {
+    width: 50%;
+    font-weight: 600;
+}
+
+
+.biz-haqimizda svg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+
+.biz-haqimizda a
+{
+    cursor: pointer;
+    z-index: 2;
+}
+
+
+
+
+/* biz haqimizda ============================= */
+
+
+
+
+
+
+
+
+/* yonalishlar =============================== */
+
+
+
+.yonalish-div {
+    padding: 20px 3%;
+    background: var(--fff);
+    position: relative;
+}
+
+
+
+
+.yonalish-div h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.yonalishlar {
+    padding: 20px 3%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.yonalish {
+    background: var(--fff);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px var(--boxShadow);
+    position: relative;
+}
+
+
+
+.yonalish img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card-info h4 {
+    font-size: 1.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* yonalishlar =============================== */
+
+
+
+
+
+
+
+
+
+/* avzalliklar =============================== */
+
+.avzalliklar {
+    padding: 20px 3% 50px;
+    height: auto;
+    background: url(./images/news-image3.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    z-index: 1;
+}
+
+.avzalliklar .svg-top {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    width: 100%;
+    z-index: -1;
+}
+.avzalliklar .svg-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    z-index: -1;
+}
+
+.avzalliklar h1 {
+    font-size: 3em;
+    margin: 20px 0;
+}
+
+
+.avzal-inner-div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    height: 100%;
+    margin: 10% 0;
+}
+
+.avzal-card {
+    border-radius: 7px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 40vh;
+    transition: .5s;
+    cursor: pointer;
+    border-radius: 10px;
+    background: linear-gradient(145deg, var(--blur-fff), var(--avzal-cardBG));
+    backdrop-filter: blur(20px);
+}
+
+.avzal-card h2 {
+    margin: 10px 0;
+}
+
+.avzal-card i {
+    font-size: 2em;
+}
+
+
+
+
+/* avzalliklar =============================== */
+
+
+
+
+
+
+
+
+/* hamkorlar =============================== */
+
+
+
+.hamkorlar
+{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    padding: 50px 3%;
+    background: url(./images/photo-of-people-near-wooden-table-3184418-scaled.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--fff);
+}
+
+
+
+
+
+.hamkorlar h1
+{
+    font-size: 3em;
+}
+
+
+.hamkorlar-div
+{
+    text-align: center;
+    background: var(--blur-fff);
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    width: 90%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    display: flex;
+    overflow: hidden;
+}
+
+
+.hamkor-card
+{
+    min-width: 200px;
+    margin: 0 20px;
+}
+
+.hamkor-card img
+{
+    width: 100%;
+    margin: 0 20px;
+}
+
+.hamkor-card:first-child
+{
+    margin-left: 0;
+}
+
+.hamkor-card:last-child
+{
+    margin-right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* hamkorlar =============================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* map ======================== */
+
+
+
+.map
+{
+    width: 100%;
+    height: 70vh;
+}
+
+.map iframe
+{
+    width: 100%;
+    height: 100%;
+}
+
+/* map ======================== */
+
+
+footer
+{
+    padding: 30px 4%;
+    width: 100%;
+    height: auto;
+}
+
+.footer-box
+{
+    display: flex;
+}
+
+.footer-box div:first-child
+{
+    margin: 0 0;
+}
+
+.footer-box div
+{
+    margin: 0 80px;
+}
+
+
+
+.footer-box a
+{
+    color: var(--link-color);
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.footer-box .hamkorlar-info a:hover,
+.footer-box .sections-info a:hover
+{
+    text-decoration: underline; 
+    color: var(--gb-color);
+}
+
+
+
+.contact-info a i
+{
+    font-size: 1.5em;
+    width: 50px;
+    height: 50px;
+    background: var(--gb-color);
+    padding: 6px;
+    margin-right: 10px;
+    border-radius: 50%;
+    color: var(--fff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.footer-copyryter
+{
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    height: 10vh;
+    color: var(--gb-color);
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.418);
+    font-weight: 600;
+}
+
+
+.btn-up
+{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0%;
+    left: 37%;
+    transform: translate(-50%,-50%);
+    border: 1px solid var(--rgbaBG);
+    border-radius: 5px;
+    font-size: 2em;
+    background: var(--fff);
+    cursor: pointer;
+    transition: .5s;
+}
+
+
+.btn-up:hover
+{
+    background: var(--gb-color);
+    color: var(--fff);
+    border-color: var(--fff);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1030px) {
+    .yonalishlar
+    {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .avzal-inner-div
+    {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+
+
+@media (max-width: 870px) {
+    .biz-haqimizda p
+    {
+        width: 80%;
+    }
+    .footer-box div
+    {
+        margin: 0 30px;
+    }
+
+    .btn-up
+    {
+        position: absolute;
+        left: 70%;
+    }
+    .footer-box h1
+    {
+        font-size: 1.2em;
+    }
+
+    .biz-haqimizda
+    {
+        background-position: center;
+    }
+}
+
+@media (max-width: 780px) {
+
+    .nav-top-info
+    {
+        flex-direction: column;
+        height: 23vh;
+    }
+    .nav-top-info span
+    {
+        padding: 10px 20px;
+        border-bottom: 1px solid var(--border-color);
+        width: 100%;
+    }
+
+    .nav-top-info span:last-child
+    {
+        border-bottom: none;
+    }
+
+    .phone-univer
+    {
+        border-right: none;
+        border-left: none;
+    }
+
+    .img h1
+    {
+        font-size: 3em;
+    }
+
+    .btn-up
+    {
+        left: 90%;
+    }
+
+    .contact-info a i 
+    {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-info a i
+    {
+        font-size: 1.5em;
+    }
+
+    header
+    {
+        height: 80vh;
+    }
+
+    .img h4
+    {
+        top: 43%;
+        letter-spacing: 1px;
+        font-size: 1em;
+    }
+
+    .img:nth-child(2) h1
+    {
+        font-size: 1.5em;
+    }
+
+}
+
+
+
+
+
+
+@media (max-width: 520px) {
+    .nav-top-info
+    {
+        display: none;
+    }
+    .yonalishlar
+    {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .avzal-inner-div
+    {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .hamkorlar
+    {
+        height: 80vh;
+    }
+    .footer-box
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-box div
+    {
+        margin: 20px 0;
+    }
+
+    .nav
+    {
+        padding: 20px;
+    }
+    .navbar-brand h1
+    {
+        font-size: 1.2em;
+    }
+
+    .biz-haqimizda p
+    {
+        width: 95%;
+    }
+
+    .hamkorlar
+    {
+        height: 100vh;
+    }
+
+    .hamkorlar h1
+    {
+        font-size: 2em;
+    }
+
+    .hamkorlar-div
+    {
+        width: 95%;
+        height: 70%;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img h1
+    {
+        font-size: 2em;
+    }
+}
